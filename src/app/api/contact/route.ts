@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     const { data, error: emailError } = await resend.emails.send({
       from: 'Webopoli <thomas@webopoli.com>',
       to: ['thomas@webopoli.com'],
-      replyTo: email,
+      reply_to: email,
       subject: `💬 Nouveau message de ${name} - Webopoli`,
       html: `
         <!DOCTYPE html>
