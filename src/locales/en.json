@@ -1,0 +1,270 @@
+{
+  "nav": {
+    "philosophy": "Philosophy",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Ethical & accessible digital",
+    "title1": "Your digital presence,",
+    "titleHighlight": "naturally",
+    "title2": "beautiful",
+    "description": "Accessible and aesthetic websites for nature entrepreneurs, artists, therapists, and positive change makers.",
+    "cta1": "Let's talk about your project",
+    "cta2": "Discover our offers",
+    "trust": {
+      "art": "Art & Culture",
+      "nature": "Nature & Ecology",
+      "wellbeing": "Wellbeing"
+    },
+    "scroll": "Explore"
+  },
+  "philosophy": {
+    "label": "Philosophy",
+    "title": "Digital at the service of",
+    "titleHighlight": "life",
+    "description": "I believe a professional website shouldn't cost months of fundraising. Your mission deserves a showcase worthy of it.",
+    "values": {
+      "accessible": {
+        "title": "Accessible",
+        "description": "Solidarity pricing so that digital is no longer a barrier to your growth."
+      },
+      "human": {
+        "title": "Human",
+        "description": "Personalized support, attentive to your needs and your universe."
+      },
+      "efficient": {
+        "title": "Efficient",
+        "description": "High-performance websites, delivered quickly, so you can focus on what matters."
+      }
+    },
+    "quote": "Focus on your art, your mission, your passion. I'll take care of your digital showcase."
+  },
+  "services": {
+    "label": "Services",
+    "title": "Committed",
+    "titleHighlight": "pricing",
+    "description": "Packages designed to adapt to your needs and budget",
+    "perProject": "/ project",
+    "delay": "Delivery",
+    "choose": "Choose this offer",
+    "popular": "Popular",
+    "showAddons": "See add-on options",
+    "plans": {
+      "essential": {
+        "name": "Essential Presence",
+        "description": "The essentials to exist online with elegance",
+        "features": [
+          "5-page showcase website",
+          "Modern responsive design",
+          "Contact form",
+          "Basic SEO optimization",
+          "Hosting included 1st year",
+          "1h training"
+        ],
+        "delay": "5-7 days"
+      },
+      "community": {
+        "name": "Community Pack",
+        "description": "To animate and unite your community",
+        "features": [
+          "Everything in Essential Presence",
+          "Event calendar",
+          "Newsletter integration",
+          "Social media connection",
+          "News section",
+          "2h training"
+        ],
+        "delay": "7-10 days"
+      },
+      "creator": {
+        "name": "Creator Pack",
+        "description": "To sell your creations and services",
+        "features": [
+          "Everything in Essential Presence",
+          "Integrated blog",
+          "E-shop (20 products)",
+          "Online payment",
+          "Order management",
+          "2h training"
+        ],
+        "delay": "10-14 days"
+      }
+    },
+    "addons": {
+      "newsletter": "Newsletter (Mailchimp/Brevo)",
+      "social": "Social media (feed)",
+      "blog": "Blog with management",
+      "calendar": "Event calendar",
+      "chat": "Automated chat",
+      "members": "Members area"
+    }
+  },
+  "process": {
+    "label": "Process",
+    "title": "How it",
+    "titleHighlight": "works",
+    "description": "Simple and transparent support, from idea to launch",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "Free conversation to understand your project, needs, and universe.",
+        "duration": "30 min • Free"
+      },
+      "proposal": {
+        "title": "Proposal",
+        "description": "Detailed quote with mockup of your future site and production schedule.",
+        "duration": "48h"
+      },
+      "creation": {
+        "title": "Creation",
+        "description": "Development of your site with regular checkpoints to validate together.",
+        "duration": "5-14 days"
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Go live, usage training, and support to get you started.",
+        "duration": "Included"
+      }
+    },
+    "cta": "Start my project"
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Completed",
+    "titleHighlight": "projects",
+    "description": "A selection of websites created for artists, nature advocates, and engaged businesses",
+    "categories": {
+      "all": "All",
+      "art": "Art & Culture",
+      "nature": "Nature & Ecology",
+      "business": "Businesses",
+      "community": "Communities"
+    },
+    "viewSite": "View site",
+    "unavailable": "Site unavailable",
+    "stats": {
+      "projects": "Projects delivered",
+      "satisfaction": "Satisfied clients",
+      "experience": "Years of experience"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk about your",
+    "titleHighlight": "project",
+    "description": "Want to bring your online presence to life? Tell me about your project, I'll respond within 24 hours.",
+    "form": {
+      "name": "Your name",
+      "namePlaceholder": "John Smith",
+      "email": "Your email",
+      "emailPlaceholder": "john@example.com",
+      "project": "Project type",
+      "projectPlaceholder": "Select an option",
+      "projectOptions": {
+        "vitrine": "Showcase website",
+        "ecommerce": "E-commerce",
+        "refonte": "Website redesign",
+        "other": "Other"
+      },
+      "message": "Your message",
+      "messagePlaceholder": "Describe your project, needs, and ideas...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I'll get back to you very soon.",
+      "error": "An error occurred. Please try again."
+    },
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "locationValue": "Autun, Burgundy, France"
+    }
+  },
+  "footer": {
+    "tagline": "Accessible and aesthetic websites for nature entrepreneurs.",
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "legalMentions": "Legal notices",
+    "privacy": "Privacy",
+    "rights": "All rights reserved."
+  },
+  "projects": {
+    "benoit-segui": {
+      "title": "Benoît Segui",
+      "categoryLabel": "Art & Culture",
+      "description": "Portfolio for a contemporary guitarist and musicology researcher. Minimalist design with personalized visual identity and custom vectors."
+    },
+    "bastien-pouilles": {
+      "title": "Bastien Pouilles",
+      "categoryLabel": "Art & Culture",
+      "description": "Portfolio for a contemporary accordionist. Personalized graphic work, photo editing, and minimalist layout."
+    },
+    "pikasilla": {
+      "title": "Pikasilla Puhkemaja",
+      "categoryLabel": "Nature & Wellbeing",
+      "description": "Holiday and training house in South Estonia. An authentic place for workshops, conferences, and events."
+    },
+    "silus": {
+      "title": "Silus Community",
+      "categoryLabel": "Community",
+      "description": "Community platform with custom systems. Advanced web development in partnership with a professional designer."
+    },
+    "orion-naval": {
+      "title": "Orion Naval Engineering",
+      "categoryLabel": "Business",
+      "description": "Complete website redesign for this naval engineering company established for 13 years. Modern design, security, and local SEO."
+    },
+    "better-organix": {
+      "title": "Better Organix",
+      "categoryLabel": "Nature & Ecology",
+      "description": "WordPress redesign keeping the original design with targeted improvements. Clean and team-maintainable site."
+    },
+    "joelahtme-aed": {
+      "title": "Jõelähtme Aed",
+      "categoryLabel": "Organic Market Garden",
+      "description": "Showcase website for a local market garden near Tallinn, Estonia. Highlighting local products and the philosophy of the place."
+    },
+    "safariland": {
+      "title": "Safariland",
+      "categoryLabel": "Business",
+      "description": "Website for an indoor playground for children in Torcy, France. Playful design and practical information."
+    },
+    "hote-ideal": {
+      "title": "L'Hôte Idéal",
+      "categoryLabel": "Shop",
+      "description": "Showcase website for a second-hand shop. Highlighting products and eco-responsible approach."
+    },
+    "vahtrame": {
+      "title": "Vahtrame",
+      "categoryLabel": "Craftsmanship",
+      "description": "Website for a carpenter and wooden house builder in Estonia. Presentation of achievements and expertise."
+    },
+    "e-compost": {
+      "title": "E-Compost",
+      "categoryLabel": "Nature & Ecology",
+      "description": "Website for an organic waste collection service. Presentation of services and composting awareness."
+    },
+    "fairgrow": {
+      "title": "Fairgrow",
+      "categoryLabel": "Nature Education",
+      "description": "Educational platform on agroecology. Training and resources for sustainable and regenerative agriculture."
+    },
+    "fairgreen": {
+      "title": "Fairgreen",
+      "categoryLabel": "Organic Market Garden",
+      "description": "Showcase website for an organic market garden. Direct sale of seasonal vegetables and short circuit philosophy."
+    },
+    "helenes-delicacies": {
+      "title": "Hélène's Delicacies",
+      "categoryLabel": "Plant-based Food",
+      "description": "E-commerce for a plant-based cheese artisan in Tallinn. Online shop with ordering, product presentation, and catering services."
+    },
+    "cours-vivantes": {
+      "title": "Cours Vivantes",
+      "categoryLabel": "Social Ecology",
+      "description": "Burgundy association of 8 professionals dedicated to re-enchanting play spaces. School yard greening, collective intelligence facilitation."
+    }
+  }
+}

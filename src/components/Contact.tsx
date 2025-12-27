@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Send, Mail, MapPin, CheckCircle, Loader2, AlertCircle } from 'lucide-react'
-import { supabase } from '@/lib/supabase'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Contact() {
   const ref = useRef(null)
@@ -17,6 +17,7 @@ export default function Contact() {
     project: '',
     message: '',
   })
+  const { t } = useLanguage()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -24,23 +25,26 @@ export default function Contact() {
     setErrorMessage('')
 
     try {
-      const { error } = await supabase
-        .from('contacts')
-        .insert([{
-          name: formData.name,
-          email: formData.email,
-          project: formData.project,
-          message: formData.message,
-        }])
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-      if (error) throw error
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Erreur lors de l\'envoi')
+      }
 
       setFormState('success')
       setFormData({ name: '', email: '', project: '', message: '' })
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error)
       setFormState('error')
-      setErrorMessage('Une erreur est survenue. Veuillez réessayer ou me contacter directement par email.')
+      setErrorMessage(t.contact.form.error)
     }
   }
 
@@ -74,7 +78,7 @@ export default function Contact() {
                 transition={{ duration: 0.6 }}
                 className="inline-block text-sage-600 text-sm tracking-widest uppercase mb-4"
               >
-                Contact
+                {t.contact.label}
               </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -82,7 +86,7 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="font-serif text-3xl md:text-5xl text-clay-900 mb-6"
               >
-                Parlons de votre <span className="text-sage-600">projet</span>
+                {t.contact.title} <span className="text-sage-600">{t.contact.titleHighlight}</span>
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -90,8 +94,7 @@ export default function Contact() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-clay-600 text-lg leading-relaxed mb-8"
               >
-                Racontez-moi votre projet, votre vision. Je vous réponds sous 24h 
-                pour discuter de comment donner vie à votre présence digitale.
+                {t.contact.description}
               </motion.p>
 
               <motion.div
@@ -105,7 +108,7 @@ export default function Contact() {
                     <Mail className="w-5 h-5 text-sage-600" />
                   </div>
                   <div>
-                    <div className="text-sm text-clay-500">Email</div>
+                    <div className="text-sm text-clay-500">{t.contact.info.email}</div>
                     <a href="mailto:thomas@webopoli.com" className="text-clay-800 hover:text-sage-600 transition-colors">
                       thomas@webopoli.com
                     </a>
@@ -116,8 +119,8 @@ export default function Contact() {
                     <MapPin className="w-5 h-5 text-sage-600" />
                   </div>
                   <div>
-                    <div className="text-sm text-clay-500">Basé à</div>
-                    <span className="text-clay-800">Autun, Bourgogne-Franche-Comté, France</span>
+                    <div className="text-sm text-clay-500">{t.contact.info.location}</div>
+                    <span className="text-clay-800">{t.contact.info.locationValue}</span>
                   </div>
                 </div>
               </motion.div>
@@ -135,16 +138,16 @@ export default function Contact() {
                     <CheckCircle className="w-8 h-8 text-sage-600" />
                   </div>
                   <h3 className="font-serif text-2xl text-clay-800 mb-3">
-                    Message envoyé !
+                    ✓
                   </h3>
                   <p className="text-clay-600">
-                    Merci pour votre message. Je vous réponds très vite.
+                    {t.contact.form.success}
                   </p>
                   <button
                     onClick={() => setFormState('idle')}
                     className="mt-6 text-sage-600 hover:text-sage-700 transition-colors"
                   >
-                    Envoyer un autre message
+                    ↩
                   </button>
                 </div>
               ) : (
@@ -164,7 +167,7 @@ export default function Contact() {
                     {/* Name */}
                     <div>
                       <label htmlFor="name" className="block text-sm text-clay-700 mb-2">
-                        Votre nom
+                        {t.contact.form.name}
                       </label>
                       <input
                         type="text"
@@ -174,14 +177,14 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl border border-sand-200 focus:border-sage-400 focus:ring-2 focus:ring-sage-100 outline-none transition-all bg-sand-50/50"
-                        placeholder="Marie Dupont"
+                        placeholder={t.contact.form.namePlaceholder}
                       />
                     </div>
 
                     {/* Email */}
                     <div>
                       <label htmlFor="email" className="block text-sm text-clay-700 mb-2">
-                        Email
+                        {t.contact.form.email}
                       </label>
                       <input
                         type="email"
@@ -191,14 +194,14 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         className="w-full px-4 py-3 rounded-xl border border-sand-200 focus:border-sage-400 focus:ring-2 focus:ring-sage-100 outline-none transition-all bg-sand-50/50"
-                        placeholder="marie@exemple.com"
+                        placeholder={t.contact.form.emailPlaceholder}
                       />
                     </div>
 
                     {/* Project Type */}
                     <div>
                       <label htmlFor="project" className="block text-sm text-clay-700 mb-2">
-                        Type de projet
+                        {t.contact.form.project}
                       </label>
                       <select
                         id="project"
@@ -208,18 +211,18 @@ export default function Contact() {
                         required
                         className="w-full px-4 py-3 rounded-xl border border-sand-200 focus:border-sage-400 focus:ring-2 focus:ring-sage-100 outline-none transition-all bg-sand-50/50"
                       >
-                        <option value="">Sélectionnez...</option>
-                        <option value="essentielle">Présence Essentielle (300€)</option>
-                        <option value="association">Pack Communauté (550€)</option>
-                        <option value="createur">Pack Créateur (750€)</option>
-                        <option value="autre">Autre / Sur mesure</option>
+                        <option value="">{t.contact.form.projectPlaceholder}</option>
+                        <option value="vitrine">{t.contact.form.projectOptions.vitrine}</option>
+                        <option value="ecommerce">{t.contact.form.projectOptions.ecommerce}</option>
+                        <option value="refonte">{t.contact.form.projectOptions.refonte}</option>
+                        <option value="autre">{t.contact.form.projectOptions.other}</option>
                       </select>
                     </div>
 
                     {/* Message */}
                     <div>
                       <label htmlFor="message" className="block text-sm text-clay-700 mb-2">
-                        Parlez-moi de votre projet
+                        {t.contact.form.message}
                       </label>
                       <textarea
                         id="message"
@@ -229,7 +232,7 @@ export default function Contact() {
                         required
                         rows={4}
                         className="w-full px-4 py-3 rounded-xl border border-sand-200 focus:border-sage-400 focus:ring-2 focus:ring-sage-100 outline-none transition-all bg-sand-50/50 resize-none"
-                        placeholder="Décrivez votre activité, vos besoins, vos envies pour votre site..."
+                        placeholder={t.contact.form.messagePlaceholder}
                       />
                     </div>
 
@@ -242,11 +245,11 @@ export default function Contact() {
                       {formState === 'loading' ? (
                         <>
                           <Loader2 className="w-5 h-5 animate-spin" />
-                          Envoi en cours...
+                          {t.contact.form.sending}
                         </>
                       ) : (
                         <>
-                          Envoyer le message
+                          {t.contact.form.submit}
                           <Send className="w-5 h-5" />
                         </>
                       )}

@@ -4,28 +4,30 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Sparkles, Users, Zap } from 'lucide-react'
-
-const values = [
-  {
-    icon: Sparkles,
-    title: 'Accessible',
-    description: 'Des prix solidaires pour que le digital ne soit plus un frein à votre rayonnement.',
-  },
-  {
-    icon: Users,
-    title: 'Humain',
-    description: 'Un accompagnement personnalisé, à l\'écoute de vos besoins et de votre univers.',
-  },
-  {
-    icon: Zap,
-    title: 'Efficace',
-    description: 'Des sites performants, livrés rapidement, pour vous concentrer sur l\'essentiel.',
-  },
-]
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Philosophie() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const { t } = useLanguage()
+
+  const values = [
+    {
+      icon: Sparkles,
+      title: t.philosophy.values.accessible.title,
+      description: t.philosophy.values.accessible.description,
+    },
+    {
+      icon: Users,
+      title: t.philosophy.values.human.title,
+      description: t.philosophy.values.human.description,
+    },
+    {
+      icon: Zap,
+      title: t.philosophy.values.efficient.title,
+      description: t.philosophy.values.efficient.description,
+    },
+  ]
 
   return (
     <section id="philosophie" className="py-24 md:py-32 relative overflow-hidden">
@@ -44,7 +46,7 @@ export default function Philosophie() {
               transition={{ duration: 0.6 }}
               className="inline-block text-sage-600 text-sm tracking-widest uppercase mb-4"
             >
-              Philosophie
+              {t.philosophy.label}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -52,8 +54,8 @@ export default function Philosophie() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-3xl md:text-5xl text-clay-900 mb-6"
             >
-              Le digital au service du{' '}
-              <span className="text-sage-600">vivant</span>
+              {t.philosophy.title}{' '}
+              <span className="text-sage-600">{t.philosophy.titleHighlight}</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -61,8 +63,7 @@ export default function Philosophie() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-clay-600 max-w-2xl mx-auto text-lg leading-relaxed"
             >
-              Je crois qu'un site web professionnel ne devrait pas coûter des mois 
-              de collecte de fonds. Votre mission mérite une vitrine à sa hauteur.
+              {t.philosophy.description}
             </motion.p>
           </div>
 
@@ -104,8 +105,7 @@ export default function Philosophie() {
             <blockquote className="relative">
               <span className="absolute -top-4 -left-2 text-6xl text-sage-200 font-serif">"</span>
               <p className="font-serif text-xl md:text-2xl text-clay-700 italic max-w-3xl mx-auto leading-relaxed">
-                Concentrez-vous sur votre art, votre mission, votre passion. 
-                Je m'occupe de votre vitrine digitale.
+                {t.philosophy.quote}
               </p>
             </blockquote>
           </motion.div>

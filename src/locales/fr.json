@@ -1,0 +1,270 @@
+{
+  "nav": {
+    "philosophy": "Philosophie",
+    "services": "Offres",
+    "portfolio": "Réalisations",
+    "process": "Processus",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Digital engagé & accessible",
+    "title1": "Votre présence digitale,",
+    "titleHighlight": "naturellement",
+    "title2": "belle",
+    "description": "Sites web accessibles et esthétiques pour entrepreneurs du vivant, artistes, thérapeutes et acteurs du changement positif.",
+    "cta1": "Parlons de votre projet",
+    "cta2": "Découvrir les offres",
+    "trust": {
+      "art": "Art & Culture",
+      "nature": "Nature & Écologie",
+      "wellbeing": "Bien-être"
+    },
+    "scroll": "Explorer"
+  },
+  "philosophy": {
+    "label": "Philosophie",
+    "title": "Le digital au service du",
+    "titleHighlight": "vivant",
+    "description": "Je crois qu'un site web professionnel ne devrait pas coûter des mois de collecte de fonds. Votre mission mérite une vitrine à sa hauteur.",
+    "values": {
+      "accessible": {
+        "title": "Accessible",
+        "description": "Des prix solidaires pour que le digital ne soit plus un frein à votre rayonnement."
+      },
+      "human": {
+        "title": "Humain",
+        "description": "Un accompagnement personnalisé, à l'écoute de vos besoins et de votre univers."
+      },
+      "efficient": {
+        "title": "Efficace",
+        "description": "Des sites performants, livrés rapidement, pour vous concentrer sur l'essentiel."
+      }
+    },
+    "quote": "Concentrez-vous sur votre art, votre mission, votre passion. Je m'occupe de votre vitrine digitale."
+  },
+  "services": {
+    "label": "Offres",
+    "title": "Des tarifs",
+    "titleHighlight": "engagés",
+    "description": "Des formules pensées pour s'adapter à vos besoins et votre budget",
+    "perProject": "/ projet",
+    "delay": "Délai",
+    "choose": "Choisir cette offre",
+    "popular": "Populaire",
+    "showAddons": "Voir les options à la carte",
+    "plans": {
+      "essential": {
+        "name": "Présence Essentielle",
+        "description": "L'essentiel pour exister en ligne avec élégance",
+        "features": [
+          "Site vitrine 5 pages",
+          "Design responsive moderne",
+          "Formulaire de contact",
+          "Optimisation SEO de base",
+          "Hébergement inclus 1ère année",
+          "1h de formation"
+        ],
+        "delay": "5-7 jours"
+      },
+      "community": {
+        "name": "Pack Communauté",
+        "description": "Pour animer et fédérer votre communauté",
+        "features": [
+          "Tout de Présence Essentielle",
+          "Agenda événementiel",
+          "Intégration Newsletter",
+          "Connexion réseaux sociaux",
+          "Espace actualités",
+          "2h de formation"
+        ],
+        "delay": "7-10 jours"
+      },
+      "creator": {
+        "name": "Pack Créateur",
+        "description": "Pour vendre vos créations et services",
+        "features": [
+          "Tout de Présence Essentielle",
+          "Blog intégré",
+          "E-shop (20 produits)",
+          "Paiement en ligne",
+          "Gestion des commandes",
+          "2h de formation"
+        ],
+        "delay": "10-14 jours"
+      }
+    },
+    "addons": {
+      "newsletter": "Newsletter (Mailchimp/Brevo)",
+      "social": "Réseaux sociaux (flux)",
+      "blog": "Blog avec gestion",
+      "calendar": "Agenda événementiel",
+      "chat": "Chat automatisé",
+      "members": "Espace membres"
+    }
+  },
+  "process": {
+    "label": "Processus",
+    "title": "Comment ça",
+    "titleHighlight": "marche",
+    "description": "Un accompagnement simple et transparent, de l'idée à la mise en ligne",
+    "steps": {
+      "discovery": {
+        "title": "Découverte",
+        "description": "Échange gratuit pour comprendre votre projet, vos besoins et votre univers.",
+        "duration": "30 min • Gratuit"
+      },
+      "proposal": {
+        "title": "Proposition",
+        "description": "Devis détaillé avec maquette de votre futur site et planning de réalisation.",
+        "duration": "48h"
+      },
+      "creation": {
+        "title": "Création",
+        "description": "Développement de votre site avec points d'étape réguliers pour valider ensemble.",
+        "duration": "5-14 jours"
+      },
+      "launch": {
+        "title": "Lancement",
+        "description": "Mise en ligne, formation à l'utilisation et support pour bien démarrer.",
+        "duration": "Inclus"
+      }
+    },
+    "cta": "Démarrer mon projet"
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Projets",
+    "titleHighlight": "réalisés",
+    "description": "Une sélection de sites créés pour des artistes, acteurs de la nature et entreprises engagées",
+    "categories": {
+      "all": "Tous",
+      "art": "Art & Culture",
+      "nature": "Nature & Écologie",
+      "business": "Entreprises",
+      "community": "Communautés"
+    },
+    "viewSite": "Voir le site",
+    "unavailable": "Site non disponible",
+    "stats": {
+      "projects": "Projets livrés",
+      "satisfaction": "Clients satisfaits",
+      "experience": "Années d'expérience"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Parlons de votre",
+    "titleHighlight": "projet",
+    "description": "Envie de donner vie à votre présence en ligne ? Racontez-moi votre projet, je vous réponds sous 24h.",
+    "form": {
+      "name": "Votre nom",
+      "namePlaceholder": "Marie Dupont",
+      "email": "Votre email",
+      "emailPlaceholder": "marie@example.com",
+      "project": "Type de projet",
+      "projectPlaceholder": "Sélectionnez une option",
+      "projectOptions": {
+        "vitrine": "Site vitrine",
+        "ecommerce": "E-commerce",
+        "refonte": "Refonte de site",
+        "other": "Autre"
+      },
+      "message": "Votre message",
+      "messagePlaceholder": "Décrivez votre projet, vos besoins, vos envies...",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès ! Je vous réponds très vite.",
+      "error": "Une erreur est survenue. Veuillez réessayer."
+    },
+    "info": {
+      "email": "Email",
+      "location": "Localisation",
+      "locationValue": "Autun, Bourgogne-Franche-Comté"
+    }
+  },
+  "footer": {
+    "tagline": "Sites web accessibles et esthétiques pour entrepreneurs du vivant.",
+    "navigation": "Navigation",
+    "legal": "Légal",
+    "legalMentions": "Mentions légales",
+    "privacy": "Confidentialité",
+    "rights": "Tous droits réservés."
+  },
+  "projects": {
+    "benoit-segui": {
+      "title": "Benoît Segui",
+      "categoryLabel": "Art & Culture",
+      "description": "Portfolio de guitariste contemporain et chercheur en musicologie. Design minimaliste avec identité visuelle personnalisée et vecteurs sur mesure."
+    },
+    "bastien-pouilles": {
+      "title": "Bastien Pouilles",
+      "categoryLabel": "Art & Culture",
+      "description": "Portfolio d'accordéoniste contemporain. Travail graphique personnalisé, édition photo et mise en page minimaliste."
+    },
+    "pikasilla": {
+      "title": "Pikasilla Puhkemaja",
+      "categoryLabel": "Nature & Bien-être",
+      "description": "Maison de vacances et de formation en Estonie du Sud. Un lieu authentique pour ateliers, conférences et événements."
+    },
+    "silus": {
+      "title": "Silus Community",
+      "categoryLabel": "Communauté",
+      "description": "Plateforme communautaire avec systèmes personnalisés. Développement web avancé en partenariat avec un designer professionnel."
+    },
+    "orion-naval": {
+      "title": "Orion Naval Engineering",
+      "categoryLabel": "Entreprise",
+      "description": "Refonte complète du site pour cette entreprise d'ingénierie navale établie depuis 13 ans. Design moderne, sécurité et SEO local."
+    },
+    "better-organix": {
+      "title": "Better Organix",
+      "categoryLabel": "Nature & Écologie",
+      "description": "Refonte WordPress en gardant le design original avec des améliorations ciblées. Site propre et maintenable par l'équipe."
+    },
+    "joelahtme-aed": {
+      "title": "Jõelähtme Aed",
+      "categoryLabel": "Maraîchage Bio",
+      "description": "Site vitrine pour un maraîchage local près de Tallinn, Estonie. Mise en valeur des produits locaux et de la philosophie du lieu."
+    },
+    "safariland": {
+      "title": "Safariland",
+      "categoryLabel": "Entreprise",
+      "description": "Site web pour une aire de jeux couverte pour enfants à Torcy, France. Design ludique et informations pratiques."
+    },
+    "hote-ideal": {
+      "title": "L'Hôte Idéal",
+      "categoryLabel": "Boutique",
+      "description": "Site vitrine pour une boutique de seconde main. Mise en valeur des produits et de la démarche éco-responsable."
+    },
+    "vahtrame": {
+      "title": "Vahtrame",
+      "categoryLabel": "Artisanat",
+      "description": "Site pour un artisan menuisier et constructeur de maisons en bois en Estonie. Présentation des réalisations et du savoir-faire."
+    },
+    "e-compost": {
+      "title": "E-Compost",
+      "categoryLabel": "Nature & Écologie",
+      "description": "Site pour un service de collecte de déchets organiques. Présentation des services et sensibilisation au compostage."
+    },
+    "fairgrow": {
+      "title": "Fairgrow",
+      "categoryLabel": "Éducation à la Nature",
+      "description": "Plateforme éducative sur l'agroécologie. Formation et ressources pour une agriculture durable et régénérative."
+    },
+    "fairgreen": {
+      "title": "Fairgreen",
+      "categoryLabel": "Maraîchage Bio",
+      "description": "Site vitrine pour un maraîchage biologique. Vente directe de légumes de saison et philosophie du circuit court."
+    },
+    "helenes-delicacies": {
+      "title": "Hélène's Delicacies",
+      "categoryLabel": "Alimentation végétale",
+      "description": "E-commerce pour une artisane de fromages végétaux à Tallinn. Boutique en ligne avec commande, présentation des produits et services traiteur."
+    },
+    "cours-vivantes": {
+      "title": "Cours Vivantes",
+      "categoryLabel": "Écologie Sociale",
+      "description": "Association bourguignonne de 8 professionnels dédiée au réenchantement des espaces de jeu. Végétalisation des cours d'école, facilitation en intelligence collective."
+    }
+  }
+}

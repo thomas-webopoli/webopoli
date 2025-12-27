@@ -1,25 +1,26 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Heart, Leaf } from 'lucide-react'
-
-const footerLinks = {
-  navigation: [
-    { label: 'Accueil', href: '#' },
-    { label: 'Services', href: '#services' },
-    { label: 'Réalisations', href: '#realisations' },
-    { label: 'Contact', href: '#contact' },
-  ],
-  legal: [
-    { label: 'Mentions légales', href: '/mentions-legales' },
-    { label: 'Politique de confidentialité', href: '/confidentialite' },
-    { label: 'CGV', href: '/cgv' },
-  ],
-}
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const { t, locale } = useLanguage()
+
+  const footerLinks = {
+    navigation: [
+      { label: locale === 'fr' ? 'Accueil' : 'Home', href: '#' },
+      { label: t.nav.services, href: '#services' },
+      { label: t.nav.portfolio, href: '#realisations' },
+      { label: t.nav.contact, href: '#contact' },
+    ],
+    legal: [
+      { label: t.footer.legalMentions, href: '/mentions-legales' },
+      { label: t.footer.privacy, href: '/confidentialite' },
+      { label: 'CGV', href: '/cgv' },
+    ],
+  }
 
   return (
     <footer className="bg-clay-900 text-sand-200 pt-16 pb-8">
@@ -35,18 +36,17 @@ export default function Footer() {
                 </span>
               </Link>
               <p className="text-sand-400 leading-relaxed max-w-md mb-6">
-                Sites web accessibles et esthétiques pour les acteurs du changement positif : 
-                artistes, thérapeutes, associations et acteurs de la nature.
+                {t.footer.tagline}
               </p>
               <div className="flex items-center gap-2 text-sage-400 text-sm">
                 <Leaf className="w-4 h-4" />
-                <span>Digital accessible et engagé</span>
+                <span>{t.hero.badge}</span>
               </div>
             </div>
 
             {/* Navigation */}
             <div>
-              <h4 className="font-serif text-lg text-sand-100 mb-4">Navigation</h4>
+              <h4 className="font-serif text-lg text-sand-100 mb-4">{t.footer.navigation}</h4>
               <ul className="space-y-2">
                 {footerLinks.navigation.map((link) => (
                   <li key={link.label}>
@@ -63,7 +63,7 @@ export default function Footer() {
 
             {/* Legal */}
             <div>
-              <h4 className="font-serif text-lg text-sand-100 mb-4">Légal</h4>
+              <h4 className="font-serif text-lg text-sand-100 mb-4">{t.footer.legal}</h4>
               <ul className="space-y-2">
                 {footerLinks.legal.map((link) => (
                   <li key={link.label}>
@@ -85,10 +85,10 @@ export default function Footer() {
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-sand-500">
             <p>
-              © {currentYear} Webopoli. Tous droits réservés.
+              © {currentYear} Webopoli. {t.footer.rights}
             </p>
             <p className="flex items-center gap-1">
-              Fait avec <Heart className="w-4 h-4 text-terracotta-500" /> en Bourgogne-Franche-Comté
+              {locale === 'fr' ? 'Fait avec' : 'Made with'} <Heart className="w-4 h-4 text-terracotta-500" /> {locale === 'fr' ? 'en Bourgogne-Franche-Comté' : 'in Burgundy, France'}
             </p>
           </div>
         </div>

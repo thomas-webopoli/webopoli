@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { ArrowDown, Leaf, Palette, Heart } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
@@ -40,7 +43,7 @@ export default function Hero() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-sage-100 text-sage-700 rounded-full text-sm">
               <Leaf className="w-4 h-4" />
-              Digital engagé & accessible
+              {t.hero.badge}
             </span>
           </motion.div>
 
@@ -51,9 +54,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-serif text-4xl md:text-6xl lg:text-7xl text-clay-900 leading-tight mb-6"
           >
-            Votre présence digitale,{' '}
+            {t.hero.title1}{' '}
             <span className="relative">
-              <span className="relative z-10 text-sage-600">naturellement</span>
+              <span className="relative z-10 text-sage-600">{t.hero.titleHighlight}</span>
               <motion.span
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
@@ -61,7 +64,7 @@ export default function Hero() {
                 className="absolute bottom-2 left-0 right-0 h-3 bg-sage-200/60 -z-0 origin-left"
               />
             </span>{' '}
-            belle
+            {t.hero.title2}
           </motion.h1>
 
           {/* Subtitle */}
@@ -71,8 +74,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-clay-600 max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Sites web accessibles et esthétiques pour entrepreneurs du vivant, artistes, 
-            thérapeutes et acteurs du changement positif.
+            {t.hero.description}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -86,7 +88,7 @@ export default function Hero() {
               href="#contact"
               className="group bg-sage-600 text-white px-8 py-4 rounded-full text-lg hover:bg-sage-700 transition-all duration-300 hover:shadow-xl hover:shadow-sage-600/20 flex items-center gap-2"
             >
-              Parlons de votre projet
+              {t.hero.cta1}
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -98,7 +100,7 @@ export default function Hero() {
               href="#services"
               className="px-8 py-4 rounded-full text-lg text-clay-700 hover:text-sage-600 transition-colors border border-clay-200 hover:border-sage-300"
             >
-              Découvrir les offres
+              {t.hero.cta2}
             </a>
           </motion.div>
 
@@ -111,15 +113,15 @@ export default function Hero() {
           >
             <div className="flex items-center gap-2 text-sm">
               <Palette className="w-5 h-5 text-terracotta-500" />
-              <span>Art & Culture</span>
+              <span>{t.hero.trust.art}</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <Leaf className="w-5 h-5 text-sage-500" />
-              <span>Nature & Écologie</span>
+              <span>{t.hero.trust.nature}</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
               <Heart className="w-5 h-5 text-terracotta-400" />
-              <span>Bien-être</span>
+              <span>{t.hero.trust.wellbeing}</span>
             </div>
           </motion.div>
         </div>
@@ -137,7 +139,7 @@ export default function Hero() {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2 text-clay-400 hover:text-sage-600 transition-colors"
           >
-            <span className="text-xs tracking-widest uppercase">Explorer</span>
+            <span className="text-xs tracking-widest uppercase">{t.hero.scroll}</span>
             <ArrowDown className="w-5 h-5" />
           </motion.a>
         </motion.div>

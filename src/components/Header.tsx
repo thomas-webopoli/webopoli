@@ -2,20 +2,22 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Globe } from 'lucide-react'
 import Link from 'next/link'
-
-const navItems = [
-  { href: '#philosophie', label: 'Philosophie' },
-  { href: '#services', label: 'Services' },
-  { href: '#processus', label: 'Processus' },
-  { href: '#realisations', label: 'Réalisations' },
-  { href: '#contact', label: 'Contact' },
-]
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { locale, setLocale, t } = useLanguage()
+
+  const navItems = [
+    { href: '#philosophie', label: t.nav.philosophy },
+    { href: '#services', label: t.nav.services },
+    { href: '#processus', label: t.nav.process },
+    { href: '#realisations', label: t.nav.portfolio },
+    { href: '#contact', label: t.nav.contact },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,10 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const toggleLanguage = () => {
+    setLocale(locale === 'fr' ? 'en' : 'fr')
+  }
 
   return (
     <header
@@ -59,29 +65,54 @@ export default function Header() {
               {item.label}
             </motion.a>
           ))}
+          
+          {/* Language Switcher */}
+          <motion.button
+            onClick={toggleLanguage}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex items-center gap-1.5 text-clay-600 hover:text-sage-600 transition-colors duration-300 text-sm tracking-wide"
+            aria-label="Change language"
+          >
+            <Globe className="w-4 h-4" />
+            <span className="uppercase font-medium">{locale === 'fr' ? 'EN' : 'FR'}</span>
+          </motion.button>
+
           <motion.a
             href="#contact"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.6 }}
             className="bg-sage-600 text-white px-6 py-2.5 rounded-full text-sm hover:bg-sage-700 transition-all duration-300 hover:shadow-lg hover:shadow-sage-600/20"
           >
-            Discutons
+            {locale === 'fr' ? 'Discutons' : "Let's talk"}
           </motion.a>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden relative z-10 p-2"
-          aria-label="Menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6 text-clay-800" />
-          ) : (
-            <Menu className="w-6 h-6 text-clay-800" />
-          )}
-        </button>
+        {/* Mobile: Language + Menu Button */}
+        <div className="md:hidden flex items-center gap-3 relative z-10">
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-1 text-clay-600 hover:text-sage-600 transition-colors p-2"
+            aria-label="Change language"
+          >
+            <Globe className="w-5 h-5" />
+            <span className="uppercase text-sm font-medium">{locale === 'fr' ? 'EN' : 'FR'}</span>
+          </button>
+          
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2"
+            aria-label="Menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6 text-clay-800" />
+            ) : (
+              <Menu className="w-6 h-6 text-clay-800" />
+            )}
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <AnimatePresence>
@@ -114,7 +145,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="mt-4 bg-sage-600 text-white px-8 py-3 rounded-full text-lg hover:bg-sage-700 transition-colors"
                 >
-                  Discutons
+                  {locale === 'fr' ? 'Discutons' : "Let's talk"}
                 </motion.a>
               </nav>
             </motion.div>

@@ -4,72 +4,62 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Check, ArrowRight, Sparkles } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
-const services = [
-  {
-    id: 'essentielle',
-    name: 'Présence Essentielle',
-    price: '300',
-    description: 'L\'essentiel pour exister en ligne avec élégance',
-    features: [
-      'Site vitrine 5 pages',
-      'Design responsive moderne',
-      'Formulaire de contact',
-      'Optimisation SEO de base',
-      'Hébergement inclus 1ère année',
-      '1h de formation',
-    ],
-    delay: '5-7 jours',
-    highlight: false,
-  },
-  {
-    id: 'association',
-    name: 'Pack Communauté',
-    price: '550',
-    description: 'Pour animer et fédérer votre communauté',
-    features: [
-      'Tout de Présence Essentielle',
-      'Agenda événementiel',
-      'Intégration Newsletter',
-      'Connexion réseaux sociaux',
-      'Espace actualités',
-      '2h de formation',
-    ],
-    delay: '7-10 jours',
-    highlight: true,
-    badge: 'Populaire',
-  },
-  {
-    id: 'createur',
-    name: 'Pack Créateur',
-    price: '750',
-    description: 'Pour vendre vos créations et services',
-    features: [
-      'Tout de Présence Essentielle',
-      'Blog intégré',
-      'E-shop (20 produits)',
-      'Paiement en ligne',
-      'Gestion des commandes',
-      '2h de formation',
-    ],
-    delay: '10-14 jours',
-    highlight: false,
-  },
-]
-
-const addons = [
-  { name: 'Newsletter (Mailchimp/Brevo)', price: '80' },
-  { name: 'Réseaux sociaux (flux)', price: '60' },
-  { name: 'Blog avec gestion', price: '100' },
-  { name: 'Agenda événementiel', price: '120' },
-  { name: 'Chat automatisé', price: '150' },
-  { name: 'Espace membres', price: '200' },
-]
+const addonPrices = {
+  newsletter: '80',
+  social: '60',
+  blog: '100',
+  calendar: '120',
+  chat: '150',
+  members: '200',
+}
 
 export default function Services() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [showAddons, setShowAddons] = useState(false)
+  const { t } = useLanguage()
+
+  const services = [
+    {
+      id: 'essential',
+      name: t.services.plans.essential.name,
+      price: '300',
+      description: t.services.plans.essential.description,
+      features: t.services.plans.essential.features,
+      delay: t.services.plans.essential.delay,
+      highlight: false,
+    },
+    {
+      id: 'community',
+      name: t.services.plans.community.name,
+      price: '550',
+      description: t.services.plans.community.description,
+      features: t.services.plans.community.features,
+      delay: t.services.plans.community.delay,
+      highlight: true,
+      badge: t.services.popular,
+    },
+    {
+      id: 'creator',
+      name: t.services.plans.creator.name,
+      price: '750',
+      description: t.services.plans.creator.description,
+      features: t.services.plans.creator.features,
+      delay: t.services.plans.creator.delay,
+      highlight: false,
+    },
+  ]
+
+  const addons = [
+    { name: t.services.addons.newsletter, price: addonPrices.newsletter },
+    { name: t.services.addons.social, price: addonPrices.social },
+    { name: t.services.addons.blog, price: addonPrices.blog },
+    { name: t.services.addons.calendar, price: addonPrices.calendar },
+    { name: t.services.addons.chat, price: addonPrices.chat },
+    { name: t.services.addons.members, price: addonPrices.members },
+  ]
 
   return (
     <section id="services" className="py-24 md:py-32 bg-gradient-to-b from-sand-50 to-sage-50/30 relative">
@@ -83,7 +73,7 @@ export default function Services() {
               transition={{ duration: 0.6 }}
               className="inline-block text-sage-600 text-sm tracking-widest uppercase mb-4"
             >
-              Offres
+              {t.services.label}
             </motion.span>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +81,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="font-serif text-3xl md:text-5xl text-clay-900 mb-6"
             >
-              Des tarifs <span className="text-sage-600">engagés</span>
+              {t.services.title} <span className="text-sage-600">{t.services.titleHighlight}</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -99,7 +89,7 @@ export default function Services() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-clay-600 max-w-2xl mx-auto text-lg"
             >
-              Des formules pensées pour s'adapter à vos besoins et votre budget
+              {t.services.description}
             </motion.p>
           </div>
 
@@ -138,7 +128,7 @@ export default function Services() {
                     {service.price}€
                   </span>
                   <span className={`text-sm ml-1 ${service.highlight ? 'text-sage-200' : 'text-clay-500'}`}>
-                    / projet
+                    {t.services.perProject}
                   </span>
                 </div>
 
@@ -154,7 +144,7 @@ export default function Services() {
                 </ul>
 
                 <div className={`text-xs mb-6 ${service.highlight ? 'text-sage-200' : 'text-clay-500'}`}>
-                  Délai : {service.delay}
+                  {t.services.delay} : {service.delay}
                 </div>
 
                 <a
@@ -165,7 +155,7 @@ export default function Services() {
                       : 'bg-sage-600 text-white hover:bg-sage-700'
                   }`}
                 >
-                  Choisir cette offre
+                  {t.services.choose}
                 </a>
               </motion.div>
             ))}
@@ -182,7 +172,7 @@ export default function Services() {
               onClick={() => setShowAddons(!showAddons)}
               className="inline-flex items-center gap-2 text-sage-600 hover:text-sage-700 transition-colors"
             >
-              <span>Voir les options à la carte</span>
+              <span>{t.services.showAddons}</span>
               <ArrowRight className={`w-4 h-4 transition-transform ${showAddons ? 'rotate-90' : ''}`} />
             </button>
 
