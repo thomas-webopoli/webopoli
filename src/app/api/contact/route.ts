@@ -1,16 +1,7 @@
-// app/api/contact/route.ts
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT) || 465,
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-})
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: NextRequest) {
   try {
@@ -32,10 +23,9 @@ export async function POST(request: NextRequest) {
       'autre': 'Autre / Sur mesure',
     }
 
-    // Envoi email
-    await transporter.sendMail({
-      from: `"Webopoli" <${process.env.SMTP_USER}>`,
-      to: 'thomas@webopoli.com',
+    const { data, error } = await resend.emails.send({
+      from: 'Webopoli <onboarding@resend.dev>',
+      to: ['thomas@webopoli.com'],
       replyTo: email,
       subject: `💬 Nouveau message de ${name} - Webopoli`,
       html: `
@@ -93,12 +83,20 @@ export async function POST(request: NextRequest) {
       `,
     })
 
-    return NextResponse.json({ success: true })
+    if (error) {
+      console.error('Erreur Resend:', error)
+      return NextResponse.json(
+        { error: 'Erreur lors de l\'envoi' },
+        { status: 500 }
+      )
+    }
+
+    return NextResponse.json({ success: true, messageId: data?.id })
 
   } catch (error) {
-    console.error('Erreur envoi email:', error)
+    console.error('Erreur:', error)
     return NextResponse.json(
-      { error: 'Erreur lors de l\'envoi' },
+      { error: 'Une erreur est survenue' },
       { status: 500 }
     )
   }
