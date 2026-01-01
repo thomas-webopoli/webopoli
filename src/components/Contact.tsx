@@ -1,14 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { Send, Mail, MapPin, CheckCircle, Loader2, AlertCircle } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [formData, setFormData] = useState({
@@ -60,55 +56,31 @@ export default function Contact() {
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-sand-100 via-sand-50 to-sage-50/50" />
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
-          transition={{ duration: 20, repeat: Infinity }}
-          className="absolute -bottom-32 -right-32 w-96 h-96 bg-sage-200/30 rounded-full blur-3xl"
-        />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-sage-200/30 rounded-full blur-3xl" aria-hidden="true" />
       </div>
 
-      <div className="container mx-auto px-6" ref={ref}>
+      <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:gap-16">
             {/* Left Column - Info */}
             <div>
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6 }}
-                className="inline-block text-sage-600 text-sm tracking-widest uppercase mb-4"
-              >
+              <span className="inline-block text-sage-600 text-sm tracking-widest uppercase mb-4">
                 {t.contact.label}
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="font-serif text-3xl md:text-5xl text-clay-900 mb-6"
-              >
+              </span>
+              <h2 className="font-serif text-3xl md:text-5xl text-clay-900 mb-6">
                 {t.contact.title} <span className="text-sage-600">{t.contact.titleHighlight}</span>
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-clay-600 text-lg leading-relaxed mb-8"
-              >
+              </h2>
+              <p className="text-clay-600 text-lg leading-relaxed mb-8">
                 {t.contact.description}
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="space-y-4"
-              >
+              <address className="space-y-4 not-italic">
                 <div className="flex items-center gap-4 text-clay-600">
                   <div className="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-sage-600" />
+                    <Mail className="w-5 h-5 text-sage-600" aria-hidden="true" />
                   </div>
                   <div>
-                    <div className="text-sm text-clay-500">{t.contact.info.email}</div>
+                    <span className="text-sm text-clay-500 block">{t.contact.info.email}</span>
                     <a href="mailto:thomas@webopoli.com" className="text-clay-800 hover:text-sage-600 transition-colors">
                       thomas@webopoli.com
                     </a>
@@ -116,30 +88,23 @@ export default function Contact() {
                 </div>
                 <div className="flex items-center gap-4 text-clay-600">
                   <div className="w-12 h-12 bg-sage-100 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-sage-600" />
+                    <MapPin className="w-5 h-5 text-sage-600" aria-hidden="true" />
                   </div>
                   <div>
-                    <div className="text-sm text-clay-500">{t.contact.info.location}</div>
+                    <span className="text-sm text-clay-500 block">{t.contact.info.location}</span>
                     <span className="text-clay-800">{t.contact.info.locationValue}</span>
                   </div>
                 </div>
-              </motion.div>
+              </address>
             </div>
 
             {/* Right Column - Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
+            <div>
               {formState === 'success' ? (
                 <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-sage-100/50 border border-sage-100 text-center">
                   <div className="w-16 h-16 bg-sage-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="w-8 h-8 text-sage-600" />
+                    <CheckCircle className="w-8 h-8 text-sage-600" aria-hidden="true" />
                   </div>
-                  <h3 className="font-serif text-2xl text-clay-800 mb-3">
-                    ✓
-                  </h3>
                   <p className="text-clay-600">
                     {t.contact.form.success}
                   </p>
@@ -147,7 +112,7 @@ export default function Contact() {
                     onClick={() => setFormState('idle')}
                     className="mt-6 text-sage-600 hover:text-sage-700 transition-colors"
                   >
-                    ↩
+                    ↩ Retour
                   </button>
                 </div>
               ) : (
@@ -158,8 +123,8 @@ export default function Contact() {
                   <div className="space-y-6">
                     {/* Error Message */}
                     {formState === 'error' && (
-                      <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700">
-                        <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                      <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700" role="alert">
+                        <AlertCircle className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                         <p className="text-sm">{errorMessage}</p>
                       </div>
                     )}
@@ -240,24 +205,24 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={formState === 'loading'}
-                      className="w-full bg-sage-600 text-white py-4 rounded-xl hover:bg-sage-700 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                      className="w-full bg-sage-600 text-white py-4 rounded-xl hover:bg-sage-700 transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                       {formState === 'loading' ? (
                         <>
-                          <Loader2 className="w-5 h-5 animate-spin" />
+                          <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
                           {t.contact.form.sending}
                         </>
                       ) : (
                         <>
                           {t.contact.form.submit}
-                          <Send className="w-5 h-5" />
+                          <Send className="w-5 h-5" aria-hidden="true" />
                         </>
                       )}
                     </button>
                   </div>
                 </form>
               )}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

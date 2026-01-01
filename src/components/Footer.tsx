@@ -38,16 +38,16 @@ export default function Footer() {
               <p className="text-sand-400 leading-relaxed max-w-md mb-6">
                 {t.footer.tagline}
               </p>
-              <div className="flex items-center gap-2 text-sage-400 text-sm">
-                <Leaf className="w-4 h-4" />
+              <p className="flex items-center gap-2 text-sage-400 text-sm">
+                <Leaf className="w-4 h-4" aria-hidden="true" />
                 <span>{t.hero.badge}</span>
-              </div>
+              </p>
             </div>
 
             {/* Navigation */}
-            <div>
+            <nav aria-label="Navigation pied de page">
               <h4 className="font-serif text-lg text-sand-100 mb-4">{t.footer.navigation}</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-none p-0">
                 {footerLinks.navigation.map((link) => (
                   <li key={link.label}>
                     <a
@@ -59,12 +59,12 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
 
             {/* Legal */}
-            <div>
+            <nav aria-label="Liens légaux">
               <h4 className="font-serif text-lg text-sand-100 mb-4">{t.footer.legal}</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-none p-0">
                 {footerLinks.legal.map((link) => (
                   <li key={link.label}>
                     <Link
@@ -76,11 +76,11 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-clay-800 mb-8" />
+          <hr className="border-clay-800 mb-8" />
 
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-sand-500">
@@ -88,7 +88,7 @@ export default function Footer() {
               © {currentYear} Webopoli. {t.footer.rights}
             </p>
             <p className="flex items-center gap-1">
-              {locale === 'fr' ? 'Fait avec' : 'Made with'} <Heart className="w-4 h-4 text-terracotta-500" /> {locale === 'fr' ? 'en Bourgogne-Franche-Comté' : 'in Burgundy, France'}
+              {locale === 'fr' ? 'Fait avec' : 'Made with'} <Heart className="w-4 h-4 text-terracotta-500" aria-hidden="true" /> {locale === 'fr' ? 'en Bourgogne-Franche-Comté' : 'in Burgundy, France'}
             </p>
           </div>
         </div>
