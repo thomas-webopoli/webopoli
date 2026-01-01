@@ -42,6 +42,9 @@ export default function Footer() {
                 <Leaf className="w-4 h-4" aria-hidden="true" />
                 <span>{t.hero.badge}</span>
               </p>
+              <a href="https://bff.ecoindex.fr/redirect/?url={https://webopoli.com}" target="_blank">
+                <img src="https://bff.ecoindex.fr/badge/?theme={light}&url={https://webopoli.com}" alt="Ecoindex Badge" />
+              </a>
             </div>
 
             {/* Navigation */}
