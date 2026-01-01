@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Webopoli <onboarding@resend.dev>',
+      from: 'Webopoli <thomas@webopoli.com>',
       to: ['thomas@webopoli.com'],
       replyTo: email,
       subject: `💬 Nouveau message de ${name} - Webopoli`,
