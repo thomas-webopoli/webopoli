@@ -21,7 +21,7 @@ export default function Services() {
     {
       id: 'essential',
       name: t.services.plans.essential.name,
-      price: '400',
+      price: '440',
       description: t.services.plans.essential.description,
       features: t.services.plans.essential.features,
       delay: t.services.plans.essential.delay,
@@ -30,7 +30,7 @@ export default function Services() {
     {
       id: 'community',
       name: t.services.plans.community.name,
-      price: '600',
+      price: '770',
       description: t.services.plans.community.description,
       features: t.services.plans.community.features,
       delay: t.services.plans.community.delay,
@@ -40,7 +40,7 @@ export default function Services() {
     {
       id: 'creator',
       name: t.services.plans.creator.name,
-      price: '800',
+      price: '990',
       description: t.services.plans.creator.description,
       features: t.services.plans.creator.features,
       delay: t.services.plans.creator.delay,
