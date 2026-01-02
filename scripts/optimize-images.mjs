@@ -7,9 +7,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const inputDir = path.join(__dirname, '../public/images/projets');
 
 // Tailles cibles pour éco-index A
-// Sur mobile : max 400px, sur desktop dans une grille 3 colonnes : ~400px aussi
-const WIDTH = 400;  // Réduit de 600 à 400
-const QUALITY = 65; // Réduit de 70 à 65
+// Calcul : grille 3 colonnes sur 1200px max = 400px, mais avec aspect-ratio 4/3
+// Donc 400px x 300px max
+const WIDTH = 380;  // Réduit encore
+const QUALITY = 60; // Réduit encore
 
 async function optimizeImages() {
   const files = fs.readdirSync(inputDir).filter(f => 
@@ -37,7 +38,7 @@ async function optimizeImages() {
     try {
       await sharp(sourcePath)
         .resize(WIDTH, null, { withoutEnlargement: true })
-        .webp({ quality: QUALITY, effort: 6 }) // effort 6 = meilleure compression
+        .webp({ quality: QUALITY, effort: 6 })
         .toFile(tempPath);
       
       fs.renameSync(tempPath, inputPath);

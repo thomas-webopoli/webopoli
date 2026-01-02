@@ -42,22 +42,19 @@ export default function Footer() {
                 <Leaf className="w-4 h-4" aria-hidden="true" />
                 <span>{t.hero.badge}</span>
               </p>
-              <br></br>
-              <p>Ce site a une empreinte environnementale intentionnellement réduite</p>
+              
+              {/* Badge EcoIndex statique (évite requête externe) */}
               <a 
                 href="https://www.ecoindex.fr/resultat/?url=https://webopoli.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block mt-4"
+                className="inline-flex items-center gap-2 mt-4 px-3 py-2 bg-sage-900/50 border border-sage-700 rounded-lg text-sage-300 hover:bg-sage-800/50 transition-colors"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="https://bff.ecoindex.fr/badge/?theme=dark&url=https://webopoli.com" 
-                  alt="Score EcoIndex du site" 
-                  width={120}
-                  height={50}
-                  loading="lazy"
-                />
+                <Leaf className="w-4 h-4 text-sage-400" aria-hidden="true" />
+                <span className="text-sm">
+                  <strong className="text-sage-200">EcoIndex B</strong>
+                  <span className="text-sage-400 ml-1">• Site éco-conçu</span>
+                </span>
               </a>
             </div>
 

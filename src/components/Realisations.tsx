@@ -112,7 +112,7 @@ export default function Realisations() {
                       src={projet.image} 
                       alt={projet.title}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 380px"
                       className="object-cover"
                       loading="lazy"
                       quality={65}
