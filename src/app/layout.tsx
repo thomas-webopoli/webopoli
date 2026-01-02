@@ -26,6 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" suppressHydrationWarning>
+      <head>
+        {/* Print CSS pour éco-conception */}
+        <link rel="stylesheet" href="/print.css" media="print" />
+      </head>
       <body className="min-h-screen flex flex-col">
         <LanguageProvider>
           <Header />

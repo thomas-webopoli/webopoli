@@ -1,0 +1,90 @@
+/**
+ * Print CSS - WebOpoli
+ * Feuille de style pour l'impression éco-responsable
+ */
+
+@media print {
+  /* Masquer les éléments non essentiels */
+  header,
+  nav,
+  footer,
+  button,
+  .animate-bounce-slow,
+  .animate-pulse-slow,
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* Reset des couleurs pour économiser l'encre */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid;
+    margin-top: 1em;
+  }
+
+  h1 { font-size: 24pt; }
+  h2 { font-size: 18pt; }
+  h3 { font-size: 14pt; }
+
+  /* Liens : afficher l'URL */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Sections */
+  section {
+    page-break-inside: avoid;
+    padding: 1rem 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Grilles en colonnes simples */
+  .grid {
+    display: block !important;
+  }
+
+  .grid > * {
+    margin-bottom: 1rem;
+  }
+
+  /* Supprimer les effets visuels */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Container pleine largeur */
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 1cm !important;
+    margin: 0 !important;
+  }
+
+  /* Masquer les overlays */
+  .group-hover\:opacity-100 {
+    display: none !important;
+  }
+}

@@ -10,8 +10,8 @@ const nextConfig = {
     // Optimisation éco-responsable des images
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000, // 1 an de cache
-    deviceSizes: [640, 750, 828, 1080], // Moins de tailles générées
-    imageSizes: [16, 32, 48, 64, 96, 128, 256], // Optimisé pour thumbnails
+    deviceSizes: [400, 640, 828], // Réduit pour éco-index (max 400px pour les projets)
+    imageSizes: [16, 32, 48, 64, 96], // Optimisé pour thumbnails
   },
   // Optimisations de build
   compiler: {
@@ -21,7 +21,7 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2)',
+        source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2|css|js)',
         headers: [
           {
             key: 'Cache-Control',

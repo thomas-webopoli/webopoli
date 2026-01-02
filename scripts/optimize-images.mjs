@@ -5,11 +5,16 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const inputDir = path.join(__dirname, '../public/images/projets');
-const WIDTH = 600;  // Largeur max réduite
-const QUALITY = 70; // Qualité WebP
+
+// Tailles cibles pour éco-index A
+// Sur mobile : max 400px, sur desktop dans une grille 3 colonnes : ~400px aussi
+const WIDTH = 400;  // Réduit de 600 à 400
+const QUALITY = 65; // Réduit de 70 à 65
 
 async function optimizeImages() {
-  const files = fs.readdirSync(inputDir).filter(f => f.endsWith('.webp') && !f.includes('.backup'));
+  const files = fs.readdirSync(inputDir).filter(f => 
+    f.endsWith('.webp') && !f.includes('.backup')
+  );
   
   console.log(`🌱 Optimisation éco-responsable des images WebOpoli`);
   console.log(`================================================`);
@@ -21,24 +26,20 @@ async function optimizeImages() {
   
   for (const file of files) {
     const inputPath = path.join(inputDir, file);
+    const backupPath = inputPath.replace('.webp', '.backup.webp');
     const tempPath = inputPath + '.tmp';
     
-    const originalSize = fs.statSync(inputPath).size;
+    // Utiliser le backup comme source si disponible (meilleure qualité)
+    const sourcePath = fs.existsSync(backupPath) ? backupPath : inputPath;
+    const originalSize = fs.statSync(sourcePath).size;
     totalOriginal += originalSize;
     
-    // Créer un backup si pas déjà fait
-    const backupPath = inputPath.replace('.webp', '.backup.webp');
-    if (!fs.existsSync(backupPath)) {
-      fs.copyFileSync(inputPath, backupPath);
-    }
-    
     try {
-      await sharp(inputPath)
+      await sharp(sourcePath)
         .resize(WIDTH, null, { withoutEnlargement: true })
-        .webp({ quality: QUALITY })
+        .webp({ quality: QUALITY, effort: 6 }) // effort 6 = meilleure compression
         .toFile(tempPath);
       
-      // Remplacer l'original
       fs.renameSync(tempPath, inputPath);
       
       const newSize = fs.statSync(inputPath).size;

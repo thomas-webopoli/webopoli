@@ -36,7 +36,7 @@
   }
 }
 
-/* Animations CSS légères - remplacent framer-motion */
+/* Animations CSS légères */
 @layer utilities {
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
@@ -66,39 +66,98 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulseSlow {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 @keyframes bounceSlow {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ============================================
+   PRINT CSS - Éco-conception
+   ============================================ */
+@media print {
+  /* Masquer les éléments non essentiels */
+  header,
+  nav,
+  footer,
+  .animate-bounce-slow,
+  .animate-pulse-slow,
+  button,
+  [aria-hidden="true"] {
+    display: none !important;
   }
-  50% {
-    transform: translateX(-50%) translateY(10px);
+
+  /* Reset des couleurs pour économiser l'encre */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  /* Liens : afficher l'URL */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after {
+    content: "";
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Sections */
+  section {
+    page-break-inside: avoid;
+    padding: 1rem 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Grilles en colonnes simples */
+  .grid {
+    display: block !important;
+  }
+
+  .grid > * {
+    margin-bottom: 1rem;
+  }
+
+  /* Supprimer les ombres et bordures décoratives */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Éviter les pages vides */
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
