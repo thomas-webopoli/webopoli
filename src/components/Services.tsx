@@ -86,7 +86,7 @@ export default function Services() {
                 }`}
               >
                 {service.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-terracotta-600 text-white text-xs px-4 py-1 rounded-full flex items-center gap-1 font-medium">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-terracotta-700 text-white text-xs px-4 py-1 rounded-full flex items-center gap-1 font-semibold">
                     <Sparkles className="w-3 h-3" aria-hidden="true" />
                     {service.badge}
                   </span>
@@ -96,7 +96,7 @@ export default function Services() {
                   <h3 className={`font-serif text-2xl mb-2 ${service.highlight ? 'text-white' : 'text-clay-800'}`}>
                     {service.name}
                   </h3>
-                  <p className={`text-sm ${service.highlight ? 'text-white/90' : 'text-clay-600'}`}>
+                  <p className={`text-sm ${service.highlight ? 'text-white' : 'text-clay-600'}`}>
                     {service.description}
                   </p>
                 </div>
@@ -105,7 +105,7 @@ export default function Services() {
                   <strong className={`font-serif text-5xl ${service.highlight ? 'text-white' : 'text-clay-900'}`}>
                     {service.price}€
                   </strong>
-                  <span className={`text-sm ml-1 ${service.highlight ? 'text-white/80' : 'text-clay-600'}`}>
+                  <span className={`text-sm ml-1 ${service.highlight ? 'text-white' : 'text-clay-600'}`}>
                     {t.services.perProject}
                   </span>
                 </p>
@@ -113,13 +113,13 @@ export default function Services() {
                 <ul className={`space-y-3 mb-8 list-none p-0 ${service.highlight ? 'text-white' : 'text-clay-600'}`}>
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${service.highlight ? 'text-white/70' : 'text-sage-500'}`} aria-hidden="true" />
+                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${service.highlight ? 'text-white' : 'text-sage-500'}`} aria-hidden="true" />
                       <span className="text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <p className={`text-xs mb-6 ${service.highlight ? 'text-white/80' : 'text-clay-600'}`}>
+                <p className={`text-xs mb-6 ${service.highlight ? 'text-white' : 'text-clay-600'}`}>
                   {t.services.delay} : {service.delay}
                 </p>
 
