@@ -25,11 +25,11 @@
     "label": "Philosophy",
     "title": "Digital at the service of",
     "titleHighlight": "life",
-    "description": "I believe a professional website shouldn't cost months of fundraising. Your mission deserves a showcase worthy of it.",
+    "description": "A professional website shouldn't cost months of fundraising. Your mission deserves a showcase worthy of it.",
     "values": {
       "accessible": {
         "title": "Accessible",
-        "description": "Solidarity pricing so that digital is no longer a barrier to your growth."
+        "description": "Solidarity pricing so that digital no longer hinders your growth."
       },
       "human": {
         "title": "Human",
@@ -41,6 +41,24 @@
       }
     },
     "quote": "Focus on your art, your mission, your passion. I'll take care of your digital showcase."
+  },
+  "ecoPerformance": {
+    "label": "Commitment",
+    "title": "An eco-friendly website without sacrificing performance",
+    "description": "Combining eco-design and technical excellence? Absolutely possible! Every website I create respects the environment while offering an optimal user experience.",
+    "ecoIndex": {
+      "title": "Eco-design",
+      "subtitle": "Reduced environmental impact",
+      "label": "Eco-designed site",
+      "description": "Every line of code counts. My sites minimize their carbon footprint through optimized images, lightweight code, and hosting powered 100% by renewable energy."
+    },
+    "pageSpeed": {
+      "title": "Performance",
+      "subtitle": "Speed and fluidity",
+      "label": "Maximum score",
+      "description": "A fast website improves user experience and SEO. My sites achieve the best Google PageSpeed scores through advanced technical optimizations."
+    },
+    "footer": "Tested and validated by EcoIndex.fr and Google PageSpeed Insights"
   },
   "services": {
     "label": "Services",
@@ -183,7 +201,7 @@
     }
   },
   "footer": {
-    "tagline": "Accessible and aesthetic websites for those who contribute to the living.",
+    "tagline": "Eco-designed websites for positive change makers.",
     "navigation": "Navigation",
     "legal": "Legal",
     "legalMentions": "Legal notices",

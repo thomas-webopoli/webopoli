@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
 import Philosophie from '@/components/Philosophie'
+import EcoPerformance from '@/components/EcoPerformance'
 import Services from '@/components/Services'
 import Realisations from '@/components/Realisations'
 import Processus from '@/components/Processus'
@@ -10,6 +11,7 @@ export default function Home() {
     <>
       <Hero />
       <Philosophie />
+      <EcoPerformance />
       <Services />
       <Processus />
       <Realisations />

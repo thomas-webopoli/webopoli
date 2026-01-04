@@ -11,7 +11,7 @@
     "title1": "Votre présence digitale,",
     "titleHighlight": "naturellement",
     "title2": "belle",
-    "description": "Sites web accessibles et esthétiques pour entrepreneurs du vivant, artistes, thérapeutes et acteurs du changement positif.",
+    "description": "Des sites web accessibles et esthétiques pour entrepreneurs du vivant, artistes, thérapeutes et acteurs du changement positif.",
     "cta1": "Parlons de votre projet",
     "cta2": "Découvrir les offres",
     "trust": {
@@ -25,11 +25,11 @@
     "label": "Philosophie",
     "title": "Le digital au service du",
     "titleHighlight": "vivant",
-    "description": "Je crois qu'un site web professionnel ne devrait pas coûter des mois de collecte de fonds. Votre mission mérite une vitrine à sa hauteur.",
+    "description": "Un site web professionnel ne devrait pas coûter des mois de collecte de fonds. Votre mission mérite une vitrine à sa hauteur.",
     "values": {
       "accessible": {
         "title": "Accessible",
-        "description": "Des prix solidaires pour que le digital ne soit plus un frein à votre rayonnement."
+        "description": "Des prix solidaires pour que le digital ne freine plus votre rayonnement."
       },
       "human": {
         "title": "Humain",
@@ -41,6 +41,24 @@
       }
     },
     "quote": "Concentrez-vous sur votre art, votre mission, votre passion. Je m'occupe de votre vitrine digitale."
+  },
+  "ecoPerformance": {
+    "label": "Engagement",
+    "title": "Un site respectueux de l'environnement sans sacrifier les performances",
+    "description": "Allier éco-conception et excellence technique, c'est possible ! Chaque site que je crée respecte l'environnement tout en offrant une expérience utilisateur optimale.",
+    "ecoIndex": {
+      "title": "Éco-conception",
+      "subtitle": "Impact environnemental réduit",
+      "label": "Site éco-conçu",
+      "description": "Chaque ligne de code compte. Mes sites minimisent leur empreinte carbone grâce à des images optimisées, un code léger et un hébergement alimenté à 100% en énergie renouvelable."
+    },
+    "pageSpeed": {
+      "title": "Performance",
+      "subtitle": "Vitesse et fluidité",
+      "label": "Score maximal",
+      "description": "Un site rapide améliore l'expérience utilisateur et le référencement. Mes sites atteignent les meilleurs scores Google PageSpeed grâce à des optimisations techniques poussées."
+    },
+    "footer": "Testé et validé par EcoIndex.fr et Google PageSpeed Insights"
   },
   "services": {
     "label": "Offres",
@@ -174,7 +192,7 @@
       "submit": "Envoyer le message",
       "sending": "Envoi en cours...",
       "success": "Message envoyé avec succès ! Je vous réponds très vite.",
-      "error": "Une erreur est survenue. Veuillez réessayer."
+      "error": "Une erreur s'est produite. Veuillez réessayer."
     },
     "info": {
       "email": "Email",
@@ -183,7 +201,7 @@
     }
   },
   "footer": {
-    "tagline": "Création de sites web et outils digitaux au service de celles et ceux qui œuvrent pour le vivant",
+    "tagline": "Création de sites web éco-conçus pour acteurs du changement positif.",
     "navigation": "Navigation",
     "legal": "Légal",
     "legalMentions": "Mentions légales",
