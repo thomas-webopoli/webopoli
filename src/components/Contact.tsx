@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Send, Mail, MapPin, CheckCircle, Loader2, AlertCircle } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -14,6 +14,27 @@ export default function Contact() {
     message: '',
   })
   const { t } = useLanguage()
+
+  // Écouter les changements de hash pour pré-remplir le formulaire
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash
+      if (hash.includes('contact')) {
+        const params = new URLSearchParams(hash.split('?')[1] || '')
+        const offer = params.get('offer')
+        if (offer && ['essential', 'community', 'creator', 'ecosystem'].includes(offer)) {
+          setFormData(prev => ({ ...prev, project: offer }))
+        }
+      }
+    }
+
+    // Vérifier au chargement initial
+    handleHashChange()
+
+    // Écouter les changements de hash
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -177,10 +198,11 @@ export default function Contact() {
                         className="w-full px-4 py-3 rounded-xl border border-sand-200 focus:border-sage-400 focus:ring-2 focus:ring-sage-100 outline-none transition-all bg-sand-50/50"
                       >
                         <option value="">{t.contact.form.projectPlaceholder}</option>
-                        <option value="vitrine">{t.contact.form.projectOptions.vitrine}</option>
-                        <option value="ecommerce">{t.contact.form.projectOptions.ecommerce}</option>
-                        <option value="refonte">{t.contact.form.projectOptions.refonte}</option>
-                        <option value="autre">{t.contact.form.projectOptions.other}</option>
+                        <option value="essential">{t.contact.form.projectOptions.essential}</option>
+                        <option value="community">{t.contact.form.projectOptions.community}</option>
+                        <option value="creator">{t.contact.form.projectOptions.creator}</option>
+                        <option value="ecosystem">{t.contact.form.projectOptions.ecosystem}</option>
+                        <option value="other">{t.contact.form.projectOptions.other}</option>
                       </select>
                     </div>
 

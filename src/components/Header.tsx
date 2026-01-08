@@ -13,6 +13,7 @@ export default function Header() {
   const navItems = [
     { href: '#philosophie', label: t.nav.philosophy },
     { href: '#services', label: t.nav.services },
+    { href: '#ecosystem', label: t.nav.ecosystem },
     { href: '#processus', label: t.nav.process },
     { href: '#realisations', label: t.nav.portfolio },
     { href: '#contact', label: t.nav.contact },

@@ -2,6 +2,7 @@
   "nav": {
     "philosophy": "Philosophy",
     "services": "Services",
+    "ecosystem": "Digital tools",
     "portfolio": "Portfolio",
     "process": "Process",
     "contact": "Contact"
@@ -11,7 +12,7 @@
     "title1": "Your digital presence,",
     "titleHighlight": "naturally",
     "title2": "beautiful",
-    "description": "Accessible and aesthetic websites for nature entrepreneurs, artists, therapists, and positive change makers.",
+    "description": "Accessible websites and connected digital tools for nature entrepreneurs, artists, therapists, and positive change makers.",
     "cta1": "Let's talk about your project",
     "cta2": "Discover our offers",
     "trust": {
@@ -85,7 +86,7 @@
         "delay": "5-7 days"
       },
       "community": {
-        "name": "Community Pack",
+        "name": "Engagement Pack",
         "description": "To animate and unite your community",
         "features": [
           "Everything in Essential Presence",
@@ -112,13 +113,79 @@
       }
     },
     "addons": {
-      "newsletter": "Newsletter (Mailchimp/Brevo)",
-      "social": "Social media (feed)",
-      "blog": "Blog with management",
-      "calendar": "Event calendar",
-      "chat": "Automated chat",
-      "members": "Members area"
+      "newsletter": "Newsletter (Listmonk)",
+      "booking": "Appointment booking (Cal.com)",
+      "gallery": "Advanced gallery",
+      "testimonials": "Client testimonials",
+      "events": "Events calendar",
+      "multilingual": "Multilingual (2 languages)",
+      "members": "Members area",
+      "forms": "Advanced form",
+      "map": "Interactive map",
+      "faq": "Dynamic FAQ",
+      "shopIntegration": "External shop integration",
+      "socialFeed": "Social media feed integration"
     }
+  },
+  "ecosystem": {
+    "label": "Digital tools",
+    "title": "Beyond the website:",
+    "titleHighlight": "your digital ecosystem",
+    "description": "Interconnected tools to simplify your daily life and free you from repetitive tasks.",
+    "intro": {
+      "text": "A beautiful website is just the beginning. But managing emails, social media, newsletters, appointments... it can quickly become time-consuming. I set up a suite of open source tools, interconnected and automated, so you can focus on your core business.",
+      "highlight": "You're an artist, therapist, producer — not a community manager."
+    },
+    "toolsTitle": "The tools I configure for you",
+    "tools": {
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "List management, automatic sending, custom design."
+      },
+      "calendar": {
+        "title": "Appointment booking",
+        "description": "Online calendar, automatic reminders, agenda sync."
+      },
+      "social": {
+        "title": "Social media",
+        "description": "Scheduled posting, cross-posting, time saved."
+      },
+      "automation": {
+        "title": "Automations",
+        "description": "Custom workflows to connect all your tools."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Simple statistics that respect privacy."
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Automated emails, pre-configured responses, client follow-up."
+      }
+    },
+    "benefitsTitle": "Why choose open source tools?",
+    "benefits": [
+      {
+        "title": "No dependency",
+        "description": "Your data belongs to you. You can migrate at any time."
+      },
+      {
+        "title": "No hidden fees",
+        "description": "No monthly subscriptions piling up. Transparent pricing."
+      },
+      {
+        "title": "Privacy respect",
+        "description": "GDPR-compliant tools that respect your visitors."
+      },
+      {
+        "title": "Full customization",
+        "description": "Each tool adapts to your way of working, not the other way around."
+      }
+    ],
+    "ctaTitle": "Every project is unique",
+    "ctaDescription": "Rather than a rigid pricing grid, I offer you a complimentary 30-minute audit to understand your needs and provide a custom quote tailored to your situation.",
+    "finalCta": "Book my complimentary audit",
+    "finalCtaNote": "30 min to understand your needs — no commitment"
   },
   "process": {
     "label": "Process",
@@ -182,9 +249,10 @@
       "project": "Project type",
       "projectPlaceholder": "Select an option",
       "projectOptions": {
-        "vitrine": "Showcase website",
-        "ecommerce": "E-commerce",
-        "refonte": "Website redesign",
+        "essential": "Essential Presence",
+        "community": "Engagement Pack",
+        "creator": "Creator Pack",
+        "ecosystem": "Digital tools",
         "other": "Other"
       },
       "message": "Your message",
@@ -201,7 +269,7 @@
     }
   },
   "footer": {
-    "tagline": "Eco-designed websites for positive change makers.",
+    "tagline": "Eco-designed websites and digital tools for positive change makers.",
     "navigation": "Navigation",
     "legal": "Legal",
     "legalMentions": "Legal notices",

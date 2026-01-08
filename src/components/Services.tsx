@@ -6,11 +6,17 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const addonPrices = {
   newsletter: '80',
-  social: '60',
-  blog: '100',
-  calendar: '120',
-  chat: '150',
+  booking: '120',
+  gallery: '100',
+  testimonials: '60',
+  events: '100',
+  multilingual: '150',
   members: '200',
+  forms: '80',
+  map: '100',
+  faq: '60',
+  shopIntegration: '80',
+  socialFeed: '60',
 }
 
 export default function Services() {
@@ -40,7 +46,7 @@ export default function Services() {
     {
       id: 'creator',
       name: t.services.plans.creator.name,
-      price: '990',
+      price: '1110',
       description: t.services.plans.creator.description,
       features: t.services.plans.creator.features,
       delay: t.services.plans.creator.delay,
@@ -50,11 +56,17 @@ export default function Services() {
 
   const addons = [
     { name: t.services.addons.newsletter, price: addonPrices.newsletter },
-    { name: t.services.addons.social, price: addonPrices.social },
-    { name: t.services.addons.blog, price: addonPrices.blog },
-    { name: t.services.addons.calendar, price: addonPrices.calendar },
-    { name: t.services.addons.chat, price: addonPrices.chat },
+    { name: t.services.addons.booking, price: addonPrices.booking },
+    { name: t.services.addons.gallery, price: addonPrices.gallery },
+    { name: t.services.addons.testimonials, price: addonPrices.testimonials },
+    { name: t.services.addons.events, price: addonPrices.events },
+    { name: t.services.addons.multilingual, price: addonPrices.multilingual },
     { name: t.services.addons.members, price: addonPrices.members },
+    { name: t.services.addons.forms, price: addonPrices.forms },
+    { name: t.services.addons.map, price: addonPrices.map },
+    { name: t.services.addons.faq, price: addonPrices.faq },
+    { name: t.services.addons.shopIntegration, price: addonPrices.shopIntegration },
+    { name: t.services.addons.socialFeed, price: addonPrices.socialFeed },
   ]
 
   return (
@@ -123,16 +135,20 @@ export default function Services() {
                   {t.services.delay} : {service.delay}
                 </p>
 
-                <a
-                  href="#contact"
-                  className={`block text-center py-3 px-6 rounded-full transition-all ${
+                <button
+                  onClick={() => {
+                    window.history.pushState({}, '', `#contact?offer=${service.id}`)
+                    window.dispatchEvent(new HashChangeEvent('hashchange'))
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className={`block w-full text-center py-3 px-6 rounded-full transition-all ${
                     service.highlight
                       ? 'bg-white text-sage-600 hover:bg-sage-50'
                       : 'bg-sage-600 text-white hover:bg-sage-700'
                   }`}
                 >
                   {t.services.choose}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -149,7 +165,7 @@ export default function Services() {
             </button>
 
             {showAddons && (
-              <ul className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto list-none p-0">
+              <ul className="mt-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto list-none p-0">
                 {addons.map((addon) => (
                   <li
                     key={addon.name}

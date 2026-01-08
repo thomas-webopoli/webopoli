@@ -2,6 +2,7 @@
   "nav": {
     "philosophy": "Philosophie",
     "services": "Offres",
+    "ecosystem": "Outils digitaux",
     "portfolio": "Réalisations",
     "process": "Processus",
     "contact": "Contact"
@@ -11,7 +12,7 @@
     "title1": "Votre présence digitale,",
     "titleHighlight": "naturellement",
     "title2": "belle",
-    "description": "Des sites web accessibles et esthétiques pour entrepreneurs du vivant, artistes, thérapeutes et acteurs du changement positif.",
+    "description": "Des sites web et outils digitaux accessibles et connectés pour entrepreneurs du vivant, artistes, thérapeutes et acteurs du changement positif.",
     "cta1": "Parlons de votre projet",
     "cta2": "Découvrir les offres",
     "trust": {
@@ -85,7 +86,7 @@
         "delay": "5-7 jours"
       },
       "community": {
-        "name": "Pack Communauté",
+        "name": "Pack Engagement",
         "description": "Pour animer et fédérer votre communauté",
         "features": [
           "Tout de Présence Essentielle",
@@ -112,13 +113,79 @@
       }
     },
     "addons": {
-      "newsletter": "Newsletter (Mailchimp/Brevo)",
-      "social": "Réseaux sociaux (flux)",
-      "blog": "Blog avec gestion",
-      "calendar": "Agenda événementiel",
-      "chat": "Chat automatisé",
-      "members": "Espace membres"
+      "newsletter": "Newsletter (Listmonk)",
+      "booking": "Prise de RDV (Cal.com)",
+      "gallery": "Galerie avancée",
+      "testimonials": "Témoignages clients",
+      "events": "Agenda événements",
+      "multilingual": "Multilingue (2 langues)",
+      "members": "Espace membres",
+      "forms": "Formulaire avancé",
+      "map": "Carte interactive",
+      "faq": "FAQ dynamique",
+      "shopIntegration": "Intégration boutique externe",
+      "socialFeed": "Intégration réseaux sociaux (feed)"
     }
+  },
+  "ecosystem": {
+    "label": "Outils digitaux",
+    "title": "Au-delà du site :",
+    "titleHighlight": "votre écosystème digital",
+    "description": "Des outils interconnectés pour simplifier votre quotidien et vous libérer des tâches répétitives.",
+    "intro": {
+      "text": "Un beau site, c'est un début. Mais gérer les emails, les réseaux sociaux, les newsletters, les rendez-vous... ça peut vite devenir chronophage. Je configure pour vous un ensemble d'outils open source, interconnectés et automatisés, pour que vous puissiez vous concentrer sur votre cœur de métier.",
+      "highlight": "Vous êtes artiste, thérapeute, producteur — pas community manager."
+    },
+    "toolsTitle": "Les outils que je configure pour vous",
+    "tools": {
+      "newsletter": {
+        "title": "Newsletter",
+        "description": "Gestion de liste, envois automatiques, design personnalisé."
+      },
+      "calendar": {
+        "title": "Prise de RDV",
+        "description": "Calendrier en ligne, rappels automatiques, synchronisation agenda."
+      },
+      "social": {
+        "title": "Réseaux sociaux",
+        "description": "Publication planifiée, cross-posting, gain de temps."
+      },
+      "automation": {
+        "title": "Automatisations",
+        "description": "Workflows personnalisés pour connecter tous vos outils."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Statistiques simples et respectueuses de la vie privée."
+      },
+      "communication": {
+        "title": "Communication",
+        "description": "Emails automatisés, réponses pré-configurées, suivi client."
+      }
+    },
+    "benefitsTitle": "Pourquoi choisir des outils open source ?",
+    "benefits": [
+      {
+        "title": "Pas de dépendance",
+        "description": "Vos données vous appartiennent. Vous pouvez migrer à tout moment."
+      },
+      {
+        "title": "Pas de frais cachés",
+        "description": "Pas d'abonnements mensuels qui s'accumulent. Un coût transparent."
+      },
+      {
+        "title": "Respect de la vie privée",
+        "description": "Des outils conformes RGPD qui respectent vos visiteurs."
+      },
+      {
+        "title": "Personnalisation totale",
+        "description": "Chaque outil s'adapte à votre façon de travailler, pas l'inverse."
+      }
+    ],
+    "ctaTitle": "Chaque projet est unique",
+    "ctaDescription": "Plutôt qu'une grille tarifaire rigide, je vous propose un audit offert de 30 minutes pour comprendre vos besoins et vous proposer un devis sur mesure, adapté à votre situation.",
+    "finalCta": "Réserver mon audit offert",
+    "finalCtaNote": "30 min pour comprendre vos besoins — sans engagement"
   },
   "process": {
     "label": "Processus",
@@ -182,9 +249,10 @@
       "project": "Type de projet",
       "projectPlaceholder": "Sélectionnez une option",
       "projectOptions": {
-        "vitrine": "Site vitrine",
-        "ecommerce": "E-commerce",
-        "refonte": "Refonte de site",
+        "essential": "Présence Essentielle",
+        "community": "Pack Engagement",
+        "creator": "Pack Créateur",
+        "ecosystem": "Outils digitaux",
         "other": "Autre"
       },
       "message": "Votre message",
@@ -201,7 +269,7 @@
     }
   },
   "footer": {
-    "tagline": "Création de sites web éco-conçus pour acteurs du changement positif.",
+    "tagline": "Création de sites web éco-conçus et outils digitaux pour acteurs du changement positif.",
     "navigation": "Navigation",
     "legal": "Légal",
     "legalMentions": "Mentions légales",
